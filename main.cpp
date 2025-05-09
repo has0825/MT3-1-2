@@ -235,7 +235,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         memcpy(preKeys, keys, 256);
         Novice::GetHitKeyStateAll(keys);
 
-        /// ↓描画処理ここから
 
 
         Matrix4x4 rotateMatrix = MakeRotateMatrix(cameraRotate);
@@ -256,7 +255,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 
         // パース付き射影行列
-        float fovY = 0.5f; // 約28度。値を小さくするとズーム、高くすると広角
+        float fovY = 0.5f; 
         float aspect = 1280.0f / 720.0f;
         float nearZ = 0.1f;
         float farZ = 100.0f;
