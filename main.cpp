@@ -211,7 +211,7 @@ Vector3 cameraTranslate = { 0.0f, 2.0f, -7.0f };
 Vector3 cameraRotate = { 0.0f, 0.0f, 0.0f };
 // 球を2つ定義
 Spheres sphereA = { {0.0f, 1.0f, 0.0f}, 1.0f };
-Spheres sphereB = { {2.0f, 1.0f, 0.0f}, 1.0f };
+
 
 
 
@@ -229,6 +229,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         ImGui::DragFloat3("CameraRotate", &cameraRotate.x, 0.01f);
         ImGui::DragFloat3("SphereCenter", &sphereA.center.x, 0.01f);
         ImGui::DragFloat("SphereA Radius", &sphereA.radius, 0.01f);
+
         ImGui::End();
 
 
@@ -281,19 +282,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         };
 
 
-        // 2球間の当たり判定（距離比較）
-        Vector3 diff = {
-            sphereA.center.x - sphereB.center.x,
-            sphereA.center.y - sphereB.center.y,
-            sphereA.center.z - sphereB.center.z
-        };
-        float distanceSquared = diff.x * diff.x + diff.y * diff.y + diff.z * diff.z;
-        float radiusSum = sphereA.radius + sphereB.radius;
-        bool isColliding = distanceSquared <= radiusSum * radiusSum;
+
 
         // 描画（Aが重なっているときだけ赤、それ以外は黒）
-        DrawSphere(sphereA, viewProjectionMatrix, viewportMatrix, isColliding ? 0xFF0000FF : 0x000000FF);
-        DrawSphere(sphereB, viewProjectionMatrix, viewportMatrix, 0x000000FF);
+        DrawSphere(sphereA, viewProjectionMatrix, viewportMatrix, 0x000000FF);
+        
 
 
 
