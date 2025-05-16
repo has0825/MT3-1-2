@@ -209,7 +209,7 @@ void DrawSphere(const Spheres& sphere, const Matrix4x4& viewProjectionMatrix, co
 
 Vector3 cameraTranslate = { 0.0f, 2.0f, -7.0f };
 Vector3 cameraRotate = { 0.0f, 0.0f, 0.0f };
-// 球を2つ定義
+// 球
 Spheres sphereA = { {0.0f, 1.0f, 0.0f}, 1.0f };
 
 
