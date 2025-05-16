@@ -250,11 +250,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         Matrix4x4 viewMatrix = MakeViewMatrix(cameraTranslate, target, up);
 
 
-
-
-
-
-
         // パース付き射影行列
         float fovY = 0.5f; 
         float aspect = 1280.0f / 720.0f;
@@ -282,16 +277,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         };
 
 
-
-
-        // 描画（Aが重なっているときだけ赤、それ以外は黒）
-        DrawSphere(sphereA, viewProjectionMatrix, viewportMatrix, 0x000000FF);
-        
-
-
-
-
         // 描画
+        DrawSphere(sphereA, viewProjectionMatrix, viewportMatrix, 0x000000FF);
         DrawGrid(viewProjectionMatrix, viewportMatrix);
 
 
